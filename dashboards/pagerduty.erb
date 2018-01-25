@@ -1,38 +1,44 @@
-<script type='text/javascript'>
+{"schedules": { "Infra-oncall": "P7VMI05"}}<script type='text/javascript'>
 $(function() {
-Dashing.gridsterLayout('[{"col":4,"row":1,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":1,"size_y":1}]')
+Dashing.gridsterLayout('[{"col":5,"row":1,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":2,"row":2,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":3,"row":2,"size_x":1,"size_y":1}]')
 });
 </script>
 <div class="gridster">
   <ul>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="oncall-name" data-view="Text" data-title="Primary Oncall" data-moreinfo="Fix all the incidents!"</div>
+      <div data-id="Infra-oncall-name" data-view="Text" data-title="Primary Oncall" data-moreinfo="Fix all the incidents!"</div>
     </li>
+    
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="firefighter-name" data-view="Text" data-title="Deploy Firefighter" data-moreinfo="Fix all the deploys!"></div>
-    </li>
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="staging-triggered" data-view="Hotness" data-title="Staging Triggered" data-cool="0" data-warm="2"></div>
+      <div data-id="Infra-triggered" data-view="Hotness" data-title="Infra Triggered" data-cool="0" data-warm="2"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="staging-acknowledged" data-view="Hotness" data-title="Staging ACK'd" data-cool="0" data-warm="2"></div>
+      <div data-id="Infra-acknowledged" data-view="Hotness" data-title="Infra ACK'd" data-cool="0" data-warm="2"></div>
     </li>    
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="preprod-triggered" data-view="Hotness" data-title="PreProd Triggered" data-cool="0" data-warm="2"></div>
+      <div data-id="API-triggered" data-view="Hotness" data-title="API Triggered" data-cool="0" data-warm="2"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="preprod-acknowledged" data-view="Hotness" data-title="PreProd ACK'd" data-cool="0" data-warm="2"></div>
+      <div data-id="API-acknowledged" data-view="Hotness" data-title="API ACK'd" data-cool="0" data-warm="2"></div>
     </li>    
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="production-triggered" data-view="Hotness" data-title="Prod Triggered" data-cool="0" data-warm="2"></div>
+      <div data-id="services-triggered" data-view="Hotness" data-title="Services Triggered" data-cool="0" data-warm="2"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="production-acknowledged" data-view="Hotness" data-title="Prod ACK'd" data-cool="0" data-warm="2"></div>
+      <div data-id="services-acknowledged" data-view="Hotness" data-title="Services ACK'd" data-cool="0" data-warm="2"></div>
+    </li>
+     
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="frontend-triggered" data-view="Hotness" data-title="Frontend Triggered" data-cool="0" data-warm="2"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="frontend-acknowledged" data-view="Hotness" data-title="Frontend ACK'd" data-cool="0" data-warm="2"></div>
     </li>    
   </ul>
 </div>
