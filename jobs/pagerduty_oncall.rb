@@ -2,7 +2,7 @@ require 'faraday'
 require 'json'
 
 url = ENV['PAGERDUTY_URL']
-api_key = ENV['PAGERDUTY_APIKEY']
+api_key = ENV['PAGERDUTY_APIKEY_V2']
 env_schedules = ENV['PAGERDUTY_SCHEDULES']
 parsed_data = JSON.parse(env_schedules)
 
@@ -19,14 +19,15 @@ SCHEDULER.every '30s' do
       faraday.adapter Faraday.default_adapter
       faraday.headers['Content-type'] = 'application/json'
       faraday.headers['Authorization'] = "Token token=#{api_key}"
+      faraday.headers['Accept'] = "application/vnd.pagerduty+json;version=2"      
       faraday.params['since'] = Time.now.utc.iso8601
       faraday.params['until'] = (Time.now.utc + 60).iso8601
     end
 
-    response = conn.get "/api/v1/schedules/#{value}/entries"
+    response = conn.get "/api/schedules/#{value}/users"
     if response.status == 200
       schedule_result = JSON.parse(response.body)
-      user_name = schedule_result['entries'][0]['user']['name']
+      user_name = schedule_result['users'][0]['name']
     else
       user_name = 'John Doe'
     end
