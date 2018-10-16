@@ -31,7 +31,6 @@ SCHEDULER.every '30s' do
       req.params['statuses[]'] = 'triggered'
       req.params['total'] = 'true'
     end
-    puts "RESPONSE #{response.body}"
     json = JSON.parse(response.body)
     triggered = json['total'] == 'null' ? 0 : json['total']
 
@@ -50,7 +49,6 @@ SCHEDULER.every '30s' do
       req.params['statuses[]'] = 'acknowledged'
       req.params['total'] = 'true'
     end
-    puts "RESPONSE #{response.body}"    
     json = JSON.parse(response.body)
     acknowledged = json['total'] == 'null' ? 0 : json['total']
     
