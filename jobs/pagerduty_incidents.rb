@@ -26,7 +26,7 @@ SCHEDULER.every '30s' do
     end
 
     response = conn.get do |req|
-      req.url '/api/incidents'
+      req.url '/incidents'
       req.params['service_ids[]'] = "#{value}"
       req.params['statuses[]'] = 'triggered'
       req.params['total'] = 'true'
@@ -45,7 +45,7 @@ SCHEDULER.every '30s' do
     end
 
     response = conn.get do |req|
-      req.url '/api/incidents'
+      req.url '/incidents'
       req.params['service_ids[]'] = "#{value}"
       req.params['statuses[]'] = 'acknowledged'
       req.params['total'] = 'true'
