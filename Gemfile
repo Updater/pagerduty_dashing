@@ -4,4 +4,4 @@ ruby "2.4.4"
 gem 'dashing'
 gem 'faraday'
 gem 'chronic'
-gem 'rubocop', '~> 0.32.0'
+gem 'rubocop', '~> 0.48.1'
